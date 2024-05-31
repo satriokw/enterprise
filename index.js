@@ -61,7 +61,8 @@ data.rows.forEach(row => {
   transformedData.properties[key] = property;
 });
 
-// console.log(JSON.stringify(transformedData));
+// console.log(transformedData);
+console.log(JSON.stringify(transformedData));
 // console.log(fields);
 
 const uiSchema = {}
@@ -76,8 +77,15 @@ data.rows.forEach(row => {
   if (colData.description) {
     uiProperty["ui:description"] = colData.description
   }
+  if (colData.placeholder) {
+    uiProperty["ui:placeholder"] = colData.placeholder
+  }
+  if (colData.type === 'password') {
+    uiProperty["ui:widget"] = 'password'
+  }
 
   uiSchema[key] = uiProperty
 });
 
+// console.log(uiSchema)
 console.log(JSON.stringify(uiSchema))
