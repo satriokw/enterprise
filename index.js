@@ -12,7 +12,7 @@ const transformedData = {
 
 // const fields = {};
 
-// main function
+// main function JSONSchema
 data.rows.forEach(row => {
   const key = row.cols[0].value.replace('{{', '').replace('}}', '');
   const colData = row.cols[0];
@@ -61,5 +61,23 @@ data.rows.forEach(row => {
   transformedData.properties[key] = property;
 });
 
-console.log(JSON.stringify(transformedData));
+// console.log(JSON.stringify(transformedData));
 // console.log(fields);
+
+const uiSchema = {}
+
+// main function ui schema
+data.rows.forEach(row => {
+  const key = row.cols[0].value.replace('{{', '').replace('}}', '');
+  const colData = row.cols[0];
+
+  const uiProperty = {}
+
+  if (colData.description) {
+    uiProperty["ui:description"] = colData.description
+  }
+
+  uiSchema[key] = uiProperty
+});
+
+console.log(JSON.stringify(uiSchema))
