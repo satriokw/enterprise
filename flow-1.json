@@ -59,6 +59,37 @@
         {
           "designInfo": {
             "stencilSuperIds": [
+              "base-float-number"
+            ],
+            "stencilId": "cloud-float-number"
+          },
+          "size": 12,
+          "extraSettings": {
+            "validationPanelDisplay": "show",
+            "fixedFractionSize": true,
+            "fractionSize": 2,
+            "type": "one",
+            "numberType": "float"
+          },
+          "isRequired": false,
+          "enabled": true,
+          "visible": true,
+          "ignore": false,
+          "label": "income",
+          "labelAlign": "top",
+          "tabIndex": 0,
+          "value": "{{income}}",
+          "id": "float-number1",
+          "defaultValue": "534.99",
+          "type": "number"
+        }
+      ]
+    },
+    {
+      "cols": [
+        {
+          "designInfo": {
+            "stencilSuperIds": [
               "base-integer-number"
             ],
             "stencilId": "cloud-integer-number"
@@ -79,36 +110,6 @@
           "tabIndex": 0,
           "value": "{{age}}",
           "id": "integer-number2",
-          "type": "number"
-        }
-      ]
-    },
-    {
-      "cols": [
-        {
-          "designInfo": {
-            "stencilSuperIds": [
-              "base-float-number"
-            ],
-            "stencilId": "cloud-float-number"
-          },
-          "size": 12,
-          "extraSettings": {
-            "validationPanelDisplay": "show",
-            "fixedFractionSize": true,
-            "fractionSize": 2,
-            "type": "one",
-            "numberType": "float"
-          },
-          "isRequired": false,
-          "enabled": true,
-          "visible": true,
-          "ignore": false,
-          "label": "income",
-          "labelAlign": "top",
-          "tabIndex": 0,
-          "value": 534.99,
-          "id": "float-number1",
           "type": "number"
         }
       ]
@@ -177,7 +178,7 @@
     "key": "testForm",
     "name": "test form",
     "description": "test form desc",
-    "version": "4",
+    "version": "5",
     "modelType": "form",
     "flowableDesignVersion": 3110,
     "palette": "flowable-work-form-palette"
