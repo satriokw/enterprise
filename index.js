@@ -2,10 +2,6 @@
 const data = require("./flow-1.json")
 // console.log(data)
 
-let rowType = data.rows.map((item) => item.cols[0].type)
-let rowLabel = data.rows.map((item) => item.cols[0].label)
-let rowValue = data.rows.map((item) => item.cols[0].value)
-
 const transformedData = {
   "title": data.metadata.name,
   "description": data.metadata.description,
@@ -14,7 +10,7 @@ const transformedData = {
   "properties": {}
 };
 
-const fields = {};
+// const fields = {};
 
 // main function
 data.rows.forEach(row => {
@@ -29,7 +25,7 @@ data.rows.forEach(row => {
 
   const property = {
     title: colData.label,
-    type: type
+    type: ''
   };
   if (colData.type === 'number') {
     property.type = typeMap[colData.extraSettings.numberType]
@@ -65,5 +61,5 @@ data.rows.forEach(row => {
   transformedData.properties[key] = property;
 });
 
-console.log(transformedData);
+console.log(JSON.stringify(transformedData));
 // console.log(fields);
