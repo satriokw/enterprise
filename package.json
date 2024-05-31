@@ -4,6 +4,7 @@
   "description": "adaptor flowable to rfjs",
   "main": "index.js",
   "scripts": {},
+  "type": "module",
   "author": "satrio.bayu",
   "license": "ISC"
 }
