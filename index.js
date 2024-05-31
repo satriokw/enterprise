@@ -52,7 +52,12 @@ data.rows.forEach(row => {
   if (colData.extraSettings.maxLength) {
     property.maxLength = colData.extraSettings.maxLength
   }
-
+  
+  // emaili format
+  if (colData.designInfo.stencilId === 'email') {
+    property.format = "email"
+  }
+  
   // required form
   if (row.cols[0].isRequired) {
     transformedData.required.push(key);

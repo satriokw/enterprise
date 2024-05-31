@@ -75,7 +75,7 @@
           "enabled": true,
           "visible": true,
           "ignore": false,
-          "label": "Income",
+          "label": "income",
           "labelAlign": "top",
           "tabIndex": 0,
           "value": "{{income}}",
@@ -105,12 +105,11 @@
           "enabled": true,
           "visible": true,
           "ignore": false,
-          "label": "Age",
+          "label": "age",
           "labelAlign": "top",
           "tabIndex": 0,
           "value": "{{age}}",
           "id": "integer-number2",
-          "defaultValue": "25",
           "type": "number"
         }
       ]
@@ -133,7 +132,7 @@
           "enabled": true,
           "visible": true,
           "ignore": false,
-          "label": "Email",
+          "label": "email",
           "labelAlign": "top",
           "tabIndex": 0,
           "validationRegExp": "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$",
@@ -164,7 +163,7 @@
           "enabled": true,
           "visible": true,
           "ignore": false,
-          "label": "Password",
+          "label": "password",
           "labelAlign": "top",
           "tabIndex": 0,
           "value": "{{password}}",
@@ -173,13 +172,40 @@
           "type": "password"
         }
       ]
+    },
+    {
+      "cols": [
+        {
+          "designInfo": {
+            "stencilSuperIds": [
+              "base-text"
+            ],
+            "stencilId": "email"
+          },
+          "size": 12,
+          "extraSettings": {
+            "validationPanelDisplay": "show"
+          },
+          "isRequired": false,
+          "enabled": true,
+          "visible": true,
+          "ignore": false,
+          "label": "Secondary Email",
+          "labelAlign": "top",
+          "tabIndex": 0,
+          "validationRegExp": "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$",
+          "value": "{{secondaryEmail}}",
+          "id": "email2",
+          "type": "text"
+        }
+      ]
     }
   ],
   "metadata": {
     "key": "testForm",
     "name": "test form",
     "description": "test form desc",
-    "version": "5",
+    "version": "6",
     "modelType": "form",
     "flowableDesignVersion": 3110,
     "palette": "flowable-work-form-palette"
