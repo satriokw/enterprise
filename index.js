@@ -20,7 +20,8 @@ data.rows.forEach(row => {
     'float': 'number',
     'integer': 'integer',
     'password': 'string',
-    'text': 'string'
+    'text': 'string',
+    'upload': 'string'
   };
 
   const property = {
@@ -58,6 +59,11 @@ data.rows.forEach(row => {
     property.format = "email"
   }
   
+  // upload
+  if (colData.type === 'upload') {
+    property.format = "data-url"
+  }
+  
   // required form
   if (row.cols[0].isRequired) {
     transformedData.required.push(key);
@@ -87,6 +93,11 @@ data.rows.forEach(row => {
   }
   if (colData.type === 'password') {
     uiProperty["ui:widget"] = 'password'
+  }
+  if (colData.extraSettings.acceptFileTypes) {
+    uiProperty["ui:options"] = {
+      accept: colData.extraSettings.acceptFileTypes
+    };
   }
 
   uiSchema[key] = uiProperty

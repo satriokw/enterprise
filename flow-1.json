@@ -178,25 +178,33 @@
         {
           "designInfo": {
             "stencilSuperIds": [
-              "base-text"
+              "base-attachment"
             ],
-            "stencilId": "email"
+            "stencilId": "cloud-attachment"
           },
           "size": 12,
           "extraSettings": {
-            "validationPanelDisplay": "show"
+            "validationPanelDisplay": "show",
+            "sharePointStoreCopy": false,
+            "itemsSource": "local",
+            "maxFiles": 200000000,
+            "minFiles": 10000000,
+            "preview": "none",
+            "allowDelete": "newOnly",
+            "downloadUrl": "rest/file/{{id}}",
+            "autoupload": true,
+            "acceptFileTypes": ".pdf, .docx, .doc"
           },
           "isRequired": false,
           "enabled": true,
           "visible": true,
           "ignore": false,
-          "label": "Secondary Email",
+          "value": "{{uploadDoc}}",
+          "label": "Upload Doc",
           "labelAlign": "top",
           "tabIndex": 0,
-          "validationRegExp": "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$",
-          "value": "{{secondaryEmail}}",
-          "id": "email2",
-          "type": "text"
+          "id": "attachment2",
+          "type": "upload"
         }
       ]
     }
@@ -205,7 +213,7 @@
     "key": "testForm",
     "name": "test form",
     "description": "test form desc",
-    "version": "6",
+    "version": "8",
     "modelType": "form",
     "flowableDesignVersion": 3110,
     "palette": "flowable-work-form-palette"
