@@ -207,13 +207,61 @@
           "type": "upload"
         }
       ]
+    },
+    {
+      "cols": [
+        {
+          "designInfo": {
+            "stencilSuperIds": [
+              "base-single-select"
+            ],
+            "stencilId": "cloud-single-select"
+          },
+          "extraSettings": {
+            "enableAutocomplete": false,
+            "dataSource": "Static",
+            "linkTarget": "_blank",
+            "storage": "Id",
+            "identity": "value",
+            "items": [
+              {
+                "text": "Duit",
+                "value": "cash"
+              },
+              {
+                "text": "DebitCard",
+                "value": "debit"
+              },
+              {
+                "text": "Credit Card",
+                "value": "credit"
+              }
+            ],
+            "validationPanelDisplay": "show",
+            "tagsEnabled": false,
+            "multi": false,
+            "preselectAll": false
+          },
+          "size": 12,
+          "isRequired": false,
+          "enabled": true,
+          "visible": true,
+          "ignore": false,
+          "label": "select",
+          "labelAlign": "top",
+          "tabIndex": 0,
+          "value": "{{select}}",
+          "id": "single-select1",
+          "type": "select"
+        }
+      ]
     }
   ],
   "metadata": {
     "key": "testForm",
     "name": "test form",
     "description": "test form desc",
-    "version": "8",
+    "version": "9",
     "modelType": "form",
     "flowableDesignVersion": 3110,
     "palette": "flowable-work-form-palette"

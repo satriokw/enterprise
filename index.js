@@ -21,7 +21,8 @@ data.rows.forEach(row => {
     'integer': 'integer',
     'password': 'string',
     'text': 'string',
-    'upload': 'string'
+    'upload': 'string',
+    'select': 'string'
   };
 
   const property = {
@@ -62,6 +63,12 @@ data.rows.forEach(row => {
   // upload
   if (colData.type === 'upload') {
     property.format = "data-url"
+  }
+  
+  // select
+  if (colData.type === 'select') {
+    property.enum = colData.extraSettings.items.map(item => item.value)
+    property.enumNames = colData.extraSettings.items.map(item => item.text)
   }
   
   // required form
