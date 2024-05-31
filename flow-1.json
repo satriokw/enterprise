@@ -1,0 +1,180 @@
+{
+  "rows": [
+    {
+      "cols": [
+        {
+          "designInfo": {
+            "stencilSuperIds": [
+              "base-text"
+            ],
+            "stencilId": "cloud-text"
+          },
+          "size": 12,
+          "extraSettings": {
+            "validationPanelDisplay": "show"
+          },
+          "isRequired": false,
+          "enabled": true,
+          "visible": true,
+          "ignore": false,
+          "label": "firstName",
+          "labelAlign": "top",
+          "tabIndex": 0,
+          "value": "{{firstName}}",
+          "id": "text1",
+          "placeholder": "John",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "cols": [
+        {
+          "designInfo": {
+            "stencilSuperIds": [
+              "base-text"
+            ],
+            "stencilId": "cloud-text"
+          },
+          "size": 12,
+          "extraSettings": {
+            "validationPanelDisplay": "show"
+          },
+          "isRequired": false,
+          "enabled": true,
+          "visible": true,
+          "ignore": false,
+          "label": "lastName",
+          "labelAlign": "top",
+          "tabIndex": 0,
+          "value": "{{lastName}}",
+          "id": "text3",
+          "placeholder": "Doe",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "cols": [
+        {
+          "designInfo": {
+            "stencilSuperIds": [
+              "base-integer-number"
+            ],
+            "stencilId": "cloud-integer-number"
+          },
+          "size": 12,
+          "extraSettings": {
+            "validationPanelDisplay": "show",
+            "type": "one",
+            "numberType": "integer",
+            "fractionSize": 0
+          },
+          "isRequired": false,
+          "enabled": true,
+          "visible": true,
+          "ignore": false,
+          "label": "age",
+          "labelAlign": "top",
+          "tabIndex": 0,
+          "value": "{{age}}",
+          "id": "integer-number2",
+          "type": "number"
+        }
+      ]
+    },
+    {
+      "cols": [
+        {
+          "designInfo": {
+            "stencilSuperIds": [
+              "base-float-number"
+            ],
+            "stencilId": "cloud-float-number"
+          },
+          "size": 12,
+          "extraSettings": {
+            "validationPanelDisplay": "show",
+            "fixedFractionSize": true,
+            "fractionSize": 2,
+            "type": "one",
+            "numberType": "float"
+          },
+          "isRequired": false,
+          "enabled": true,
+          "visible": true,
+          "ignore": false,
+          "label": "income",
+          "labelAlign": "top",
+          "tabIndex": 0,
+          "value": 534.99,
+          "id": "float-number1",
+          "type": "number"
+        }
+      ]
+    },
+    {
+      "cols": [
+        {
+          "designInfo": {
+            "stencilSuperIds": [
+              "base-text"
+            ],
+            "stencilId": "email"
+          },
+          "size": 12,
+          "extraSettings": {
+            "validationPanelDisplay": "show"
+          },
+          "isRequired": false,
+          "enabled": true,
+          "visible": true,
+          "ignore": false,
+          "label": "email",
+          "labelAlign": "top",
+          "tabIndex": 0,
+          "validationRegExp": "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$",
+          "value": "{{email}}",
+          "id": "email1",
+          "placeholder": "example@example.com",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "cols": [
+        {
+          "designInfo": {
+            "stencilSuperIds": [
+              "base-password"
+            ],
+            "stencilId": "cloud-password"
+          },
+          "size": 12,
+          "extraSettings": {
+            "validationPanelDisplay": "show"
+          },
+          "isRequired": false,
+          "enabled": true,
+          "visible": true,
+          "ignore": false,
+          "label": "password",
+          "labelAlign": "top",
+          "tabIndex": 0,
+          "value": "{{password}}",
+          "id": "password1",
+          "type": "password"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "key": "testForm",
+    "name": "test form",
+    "description": "test form desc",
+    "version": "3",
+    "modelType": "form",
+    "flowableDesignVersion": 3110,
+    "palette": "flowable-work-form-palette"
+  }
+}
