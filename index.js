@@ -1,7 +1,11 @@
 // console.log("welcome to USS enterprise")
-// import data from "./flow-1.json"
-import data from "./flow-1.json" assert {type: "json"}
-import TYPE_CONSTANT from "./constant.js"
+const data = require("./flow-1.json")
+
+const TYPE_CONSTANT = {
+  "text": "string",
+  "number": "number",
+  "password": "string",
+}
 
 // console.log(data)
 
@@ -17,8 +21,7 @@ let refinedValue = rowValue.map(item => item.replace('{{', '').replace('}}', '')
 // console.log(rowValue)
 // console.log(refinedValue)
 
-let hehe = rowType.map(item => TYPE_CONSTANT[item])
-console.log(hehe)
+let type = rowType.map(item => TYPE_CONSTANT[item])
 
 const resData = {
   title: "A registration form",
@@ -37,3 +40,18 @@ refinedValue.forEach(item => {
 });
 
 // console.log(resData);
+
+
+const transformedData = {
+  "title": data.metadata.name,
+  "description": data.metadata.description,
+  "type": "object",
+  "properties": {}
+};
+
+data.rows.forEach(row => {
+  const key = row.cols[0].value.replace('{{', '').replace('}}', '');
+  transformedData[key] = row.cols[0];
+});
+
+console.log(transformedData);
