@@ -110,6 +110,7 @@
           "tabIndex": 0,
           "value": "{{age}}",
           "id": "integer-number2",
+          "defaultValue": "25",
           "type": "number"
         }
       ]

@@ -52,8 +52,7 @@ data.rows.forEach(row => {
     'float': 'number',
     'integer': 'integer',
     'password': 'string',
-    'text': 'string',
-    'email': 'string'
+    'text': 'string'
   };
 
   const property = {
@@ -67,10 +66,26 @@ data.rows.forEach(row => {
   }
   
 
+  // default value
   if (colData.defaultValue) {
-    property.default = colData.defaultValue;
+    if (colData.extraSettings.numberType === "float") {
+      property.default = Number.parseFloat(colData.defaultValue);
+    } else if (colData.extraSettings.numberType === "integer") {
+      property.default = Number.parseInt(colData.defaultValue);
+    } else {
+      property.default = colData.defaultValue;
+    }
   }
 
+  // min-max length
+  if (colData.extraSettings.minLength) {
+    property.minLength = colData.extraSettings.minLength
+  } 
+  if (colData.extraSettings.maxLength) {
+    property.maxLength = colData.extraSettings.maxLength
+  }
+
+  // required form
   if (row.cols[0].isRequired) {
     transformedData.required.push(key);
   }
