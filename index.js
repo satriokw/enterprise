@@ -23,21 +23,14 @@ let refinedValue = rowValue.map(item => item.replace('{{', '').replace('}}', '')
 
 let type = rowType.map(item => TYPE_CONSTANT[item])
 
-const resData = {
-  title: "A registration form",
-  description: "A simple form example.",
-  type: "object",
-  properties: {}
-}
-
 const formData = {
   type: "",
   title: "",
 }
 
-refinedValue.forEach(item => {
-  resData.properties[item] = {};
-});
+// refinedValue.forEach(item => {
+//   resData.properties[item] = {};
+// });
 
 // console.log(resData);
 
@@ -46,12 +39,44 @@ const transformedData = {
   "title": data.metadata.name,
   "description": data.metadata.description,
   "type": "object",
+  "required": [],
   "properties": {}
 };
 
+const fields = {};
+
 data.rows.forEach(row => {
   const key = row.cols[0].value.replace('{{', '').replace('}}', '');
-  transformedData[key] = row.cols[0];
+  const colData = row.cols[0];
+  const typeMap = {
+    'float': 'number',
+    'integer': 'integer',
+    'password': 'string',
+    'text': 'string',
+    'email': 'string'
+  };
+
+  const property = {
+    title: colData.label,
+    type: type
+  };
+  if (colData.type === 'number') {
+    property.type = typeMap[colData.extraSettings.numberType]
+  } else {
+    property.type = typeMap[colData.type];
+  }
+  
+
+  if (colData.defaultValue) {
+    property.default = colData.defaultValue;
+  }
+
+  if (row.cols[0].isRequired) {
+    transformedData.required.push(key);
+  }
+
+  transformedData.properties[key] = property;
 });
 
 console.log(transformedData);
+// console.log(fields);
