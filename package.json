@@ -1,0 +1,9 @@
+{
+  "name": "enterprise",
+  "version": "1.0.0",
+  "description": "adaptor flowable to rfjs",
+  "main": "index.js",
+  "scripts": {},
+  "author": "satrio.bayu",
+  "license": "ISC"
+}

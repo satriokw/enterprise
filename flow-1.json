@@ -13,11 +13,11 @@
           "extraSettings": {
             "validationPanelDisplay": "show"
           },
-          "isRequired": false,
+          "isRequired": true,
           "enabled": true,
           "visible": true,
           "ignore": false,
-          "label": "firstName",
+          "label": "First Name",
           "labelAlign": "top",
           "tabIndex": 0,
           "value": "{{firstName}}",
@@ -44,7 +44,7 @@
           "enabled": true,
           "visible": true,
           "ignore": false,
-          "label": "lastName",
+          "label": "Last Name",
           "labelAlign": "top",
           "tabIndex": 0,
           "value": "{{lastName}}",
@@ -122,11 +122,12 @@
             ],
             "stencilId": "email"
           },
-          "size": 12,
           "extraSettings": {
+            "minLength": 5,
             "validationPanelDisplay": "show"
           },
-          "isRequired": false,
+          "size": 12,
+          "isRequired": true,
           "enabled": true,
           "visible": true,
           "ignore": false,
@@ -137,6 +138,7 @@
           "value": "{{email}}",
           "id": "email1",
           "placeholder": "example@example.com",
+          "description": "user email to log in",
           "type": "text"
         }
       ]
@@ -150,11 +152,13 @@
             ],
             "stencilId": "cloud-password"
           },
-          "size": 12,
           "extraSettings": {
+            "maxLength": 32,
+            "minLength": 6,
             "validationPanelDisplay": "show"
           },
-          "isRequired": false,
+          "size": 12,
+          "isRequired": true,
           "enabled": true,
           "visible": true,
           "ignore": false,
@@ -163,6 +167,7 @@
           "tabIndex": 0,
           "value": "{{password}}",
           "id": "password1",
+          "placeholder": "password",
           "type": "password"
         }
       ]
@@ -172,7 +177,7 @@
     "key": "testForm",
     "name": "test form",
     "description": "test form desc",
-    "version": "3",
+    "version": "4",
     "modelType": "form",
     "flowableDesignVersion": 3110,
     "palette": "flowable-work-form-palette"
