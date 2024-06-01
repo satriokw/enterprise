@@ -225,7 +225,7 @@
             "identity": "value",
             "items": [
               {
-                "text": "Duit",
+                "text": "duit",
                 "value": "cash"
               },
               {
@@ -255,13 +255,110 @@
           "type": "select"
         }
       ]
+    },
+    {
+      "cols": [
+        {
+          "designInfo": {
+            "stencilSuperIds": [
+              "base-radiobuttons"
+            ],
+            "stencilId": "cloud-radiobuttons"
+          },
+          "extraSettings": {
+            "dataSource": "Static",
+            "storage": "Id",
+            "identity": "value",
+            "validationPanelDisplay": "show",
+            "items": [
+              {
+                "text": "ayam pak gembus",
+                "value": "gembus"
+              },
+              {
+                "text": "ayam geprek bu rum",
+                "value": "geprek"
+              },
+              {
+                "text": "sate ratu",
+                "value": "ratu"
+              }
+            ],
+            "linkTarget": "_blank"
+          },
+          "size": 12,
+          "isRequired": false,
+          "enabled": true,
+          "visible": true,
+          "ignore": false,
+          "label": "Radiozo",
+          "labelAlign": "top",
+          "tabIndex": 0,
+          "value": "{{radioButton}}",
+          "id": "radiobuttons2",
+          "type": "radio"
+        }
+      ]
+    },
+    {
+      "cols": [
+        {
+          "designInfo": {
+            "stencilSuperIds": [
+              "base-switcher"
+            ],
+            "stencilId": "cloud-switcher"
+          },
+          "size": 12,
+          "extraSettings": {
+            "validationPanelDisplay": "show"
+          },
+          "isRequired": false,
+          "enabled": true,
+          "visible": true,
+          "ignore": false,
+          "label": "makan siang gratis?",
+          "checkboxLabelAlign": "right",
+          "defaultValue": false,
+          "value": "{{switch}}",
+          "type": "switcher",
+          "id": "switcher2"
+        }
+      ]
+    },
+    {
+      "cols": [
+        {
+          "designInfo": {
+            "stencilSuperIds": [
+              "base-checkbox"
+            ],
+            "stencilId": "cloud-checkbox"
+          },
+          "size": 12,
+          "extraSettings": {
+            "validationPanelDisplay": "show"
+          },
+          "isRequired": false,
+          "enabled": true,
+          "visible": true,
+          "ignore": false,
+          "label": "checkbozzz",
+          "tabIndex": 0,
+          "checkboxLabelAlign": "right",
+          "defaultValue": false,
+          "value": "{{checkbozzz}}",
+          "type": "boolean",
+          "id": "checkbox2"
+        }
+      ]
     }
   ],
   "metadata": {
     "key": "testForm",
     "name": "test form",
     "description": "test form desc",
-    "version": "9",
+    "version": "10",
     "modelType": "form",
     "flowableDesignVersion": 3110,
     "palette": "flowable-work-form-palette"

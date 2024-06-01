@@ -1,5 +1,7 @@
 // console.log("welcome to USS enterprise")
 const data = require("./flow-1.json")
+const fs = require('node:fs');
+
 // console.log(data)
 
 const transformedData = {
@@ -22,7 +24,10 @@ data.rows.forEach(row => {
     'password': 'string',
     'text': 'string',
     'upload': 'string',
-    'select': 'string'
+    'select': 'string',
+    'radio': 'string',
+    'boolean': 'boolean',
+    'switcher': 'boolean',
   };
 
   const property = {
@@ -37,14 +42,14 @@ data.rows.forEach(row => {
   
 
   // default value
-  if (colData.defaultValue) {
-    if (colData.extraSettings.numberType === "float") {
-      property.default = Number.parseFloat(colData.defaultValue);
-    } else if (colData.extraSettings.numberType === "integer") {
-      property.default = Number.parseInt(colData.defaultValue);
-    } else {
-      property.default = colData.defaultValue;
-    }
+  if (colData.defaultValue && colData.extraSettings.numberType === "float") {
+    property.default = Number.parseFloat(colData.defaultValue);
+  }
+  if (colData.defaultValue && colData.extraSettings.numberType === "integer") {
+    property.default = Number.parseInt(colData.defaultValue);
+  }
+  if (colData.hasOwnProperty('defaultValue')) {
+    property.default = colData.defaultValue;
   }
 
   // min-max length
@@ -65,12 +70,12 @@ data.rows.forEach(row => {
     property.format = "data-url"
   }
   
-  // select
-  if (colData.type === 'select') {
+  // select & radio
+  if (colData.type === 'select' || colData.type === 'radio') {
     property.enum = colData.extraSettings.items.map(item => item.value)
     property.enumNames = colData.extraSettings.items.map(item => item.text)
   }
-  
+
   // required form
   if (row.cols[0].isRequired) {
     transformedData.required.push(key);
@@ -106,9 +111,26 @@ data.rows.forEach(row => {
       accept: colData.extraSettings.acceptFileTypes
     };
   }
+  // radio & switcher
+  if (colData.type === 'radio' || colData.type === 'switcher'
+  ) {
+    uiProperty["ui:widget"] = "radio",
+    uiProperty["ui:options"] = {
+      "inilne": true
+    }
+  }
 
   uiSchema[key] = uiProperty
 });
 
 // console.log(uiSchema)
 console.log(JSON.stringify(uiSchema))
+
+// write to file
+// fs.writeFile('/Users/koinworks/labs/sandbox/enterprise/output.json', JSON.stringify(transformedData), err => {
+//   if (err) {
+//     console.error(err);
+//   } else {
+//     console.log("success");
+//   }
+// });
