@@ -1,6 +1,10 @@
 // console.log("welcome to USS enterprise")
-const data = require("./flow-1.json")
+// const data = require("./flow-1.json")
 const fs = require('node:fs');
+
+// read .form file and Parse the JSON data
+const rawData = fs.readFileSync('./form-testForm.form', 'utf8');
+const data = JSON.parse(rawData);
 
 // console.log(data)
 
@@ -143,7 +147,6 @@ fs.writeFile('/Users/koinworks/labs/sandbox/enterprise/output.json', JSON.string
     console.log("success");
   }
 });
-
 fs.writeFile('/Users/koinworks/labs/sandbox/enterprise/output-ui.json', JSON.stringify(uiSchema), err => {
   if (err) {
     console.error(err);
