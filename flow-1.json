@@ -352,13 +352,46 @@
           "id": "checkbox2"
         }
       ]
+    },
+    {
+      "cols": [
+        {
+          "designInfo": {
+            "stencilSuperIds": [
+              "base-date"
+            ],
+            "stencilId": "cloud-date"
+          },
+          "size": 12,
+          "extraSettings": {
+            "validationPanelDisplay": "show",
+            "maxDate": "P1Y",
+            "minDate": "P-1Y",
+            "disableWeekends": false,
+            "calendarStartDay": "monday",
+            "enableTime": false,
+            "storeWithoutTime": true,
+            "format": "yyyy/MM/DD"
+          },
+          "isRequired": true,
+          "enabled": true,
+          "visible": true,
+          "ignore": false,
+          "label": "tanggal nikah",
+          "labelAlign": "top",
+          "tabIndex": 0,
+          "value": "{{tanggalNikah}}",
+          "id": "date2",
+          "type": "date"
+        }
+      ]
     }
   ],
   "metadata": {
     "key": "testForm",
     "name": "test form",
     "description": "test form desc",
-    "version": "10",
+    "version": "11",
     "modelType": "form",
     "flowableDesignVersion": 3110,
     "palette": "flowable-work-form-palette"

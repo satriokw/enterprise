@@ -28,6 +28,7 @@ data.rows.forEach(row => {
     'radio': 'string',
     'boolean': 'boolean',
     'switcher': 'boolean',
+    'date': 'string',
   };
 
   const property = {
@@ -76,6 +77,11 @@ data.rows.forEach(row => {
     property.enumNames = colData.extraSettings.items.map(item => item.text)
   }
 
+  // date
+  if (colData.type === 'date') {
+    property.format = "date"
+  }
+
   // required form
   if (row.cols[0].isRequired) {
     transformedData.required.push(key);
@@ -85,7 +91,7 @@ data.rows.forEach(row => {
 });
 
 // console.log(transformedData);
-console.log(JSON.stringify(transformedData));
+// console.log(JSON.stringify(transformedData));
 // console.log(fields);
 
 const uiSchema = {}
@@ -124,13 +130,21 @@ data.rows.forEach(row => {
 });
 
 // console.log(uiSchema)
-console.log(JSON.stringify(uiSchema))
+// console.log(JSON.stringify(uiSchema))
 
 // write to file
-// fs.writeFile('/Users/koinworks/labs/sandbox/enterprise/output.json', JSON.stringify(transformedData), err => {
-//   if (err) {
-//     console.error(err);
-//   } else {
-//     console.log("success");
-//   }
-// });
+fs.writeFile('/Users/koinworks/labs/sandbox/enterprise/output.json', JSON.stringify(transformedData), err => {
+  if (err) {
+    console.error(err);
+  } else {
+    console.log("success");
+  }
+});
+
+fs.writeFile('/Users/koinworks/labs/sandbox/enterprise/output-ui.json', JSON.stringify(uiSchema), err => {
+  if (err) {
+    console.error(err);
+  } else {
+    console.log("success");
+  }
+});
