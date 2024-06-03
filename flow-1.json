@@ -369,9 +369,10 @@
             "minDate": "P-1Y",
             "disableWeekends": false,
             "calendarStartDay": "monday",
-            "enableTime": false,
-            "storeWithoutTime": true,
-            "format": "yyyy/MM/DD"
+            "enableTime": true,
+            "timeInterval": 15,
+            "format": "yyyy/MM/DD",
+            "storeWithoutTime": true
           },
           "isRequired": true,
           "enabled": true,
@@ -391,7 +392,7 @@
     "key": "testForm",
     "name": "test form",
     "description": "test form desc",
-    "version": "11",
+    "version": "12",
     "modelType": "form",
     "flowableDesignVersion": 3110,
     "palette": "flowable-work-form-palette"

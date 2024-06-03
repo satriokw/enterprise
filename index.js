@@ -81,6 +81,9 @@ data.rows.forEach(row => {
   if (colData.type === 'date') {
     property.format = "date"
   }
+  if (colData.type === 'date' && colData.extraSettings.enableTime === true) {
+    property.format = "date-time"
+  }
 
   // required form
   if (row.cols[0].isRequired) {
