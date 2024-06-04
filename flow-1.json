@@ -194,7 +194,10 @@
             "allowDelete": "newOnly",
             "downloadUrl": "rest/file/{{id}}",
             "autoupload": true,
-            "acceptFileTypes": ".pdf, .docx, .doc"
+            "acceptFileTypes": ".pdf, .docx, .doc",
+            "uploadUrl": "https://asgard.koin.works/v1/storage/",
+            "updateFileUrl": "https://asgard.koin.works/v1/storage/update/",
+            "deleteUrl": "https://asgard.koin.works/v1/storage/delete/"
           },
           "isRequired": false,
           "enabled": true,
@@ -366,23 +369,58 @@
           "size": 12,
           "extraSettings": {
             "validationPanelDisplay": "show",
-            "maxDate": "P1Y",
-            "minDate": "P-1Y",
             "disableWeekends": false,
             "calendarStartDay": "monday",
-            "enableTime": true,
-            "format": "yyyy/MM/DD",
-            "storeWithoutTime": true
+            "enableTime": false,
+            "storeWithoutTime": true,
+            "format": "yyyy/MM/DD"
           },
           "isRequired": true,
           "enabled": true,
           "visible": true,
           "ignore": false,
-          "label": "tanggal gajian",
+          "label": "tanggal ulang tahun",
           "labelAlign": "top",
           "tabIndex": 0,
-          "value": "{{tanggalGajian}}",
-          "id": "date2",
+          "defaultValue": "1998/05/31",
+          "value": "{{tanggalUlangTahun}}",
+          "id": "date3",
+          "placeholder": "1998/05/31",
+          "type": "date"
+        }
+      ]
+    },
+    {
+      "cols": [
+        {
+          "designInfo": {
+            "stencilSuperIds": [
+              "base-date"
+            ],
+            "stencilId": "cloud-date"
+          },
+          "size": 12,
+          "extraSettings": {
+            "validationPanelDisplay": "show",
+            "disableWeekends": false,
+            "calendarStartDay": "monday",
+            "enableTime": true,
+            "timeInterval": 1,
+            "timeFormat": "hh:mm",
+            "format": "DD-MM-yyyy hh:mm",
+            "storeWithoutTime": true
+          },
+          "isRequired": false,
+          "enabled": true,
+          "visible": true,
+          "ignore": false,
+          "label": "tanggal pertemuan",
+          "labelAlign": "top",
+          "tabIndex": 0,
+          "defaultValue": "13-06-2024 10:35",
+          "value": "{{tanggalPertemuan}}",
+          "id": "date4",
+          "placeholder": "28-02-2024 10:30",
           "type": "date"
         }
       ]
@@ -392,7 +430,7 @@
     "key": "testForm",
     "name": "test form",
     "description": "test form desc",
-    "version": "14",
+    "version": "17",
     "modelType": "form",
     "flowableDesignVersion": 3110,
     "palette": "flowable-work-form-palette"

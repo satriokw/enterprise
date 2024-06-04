@@ -5,5 +5,8 @@
   "main": "index.js",
   "scripts": {},
   "author": "satrio.bayu",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "dayjs": "^1.11.11"
+  }
 }

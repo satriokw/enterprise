@@ -1,6 +1,9 @@
 // console.log("welcome to USS enterprise")
 // const data = require("./flow-1.json")
 const fs = require('node:fs');
+const dayjs = require('dayjs')
+const customParseFormat = require('dayjs/plugin/customParseFormat');
+dayjs.extend(customParseFormat);
 
 // read .form file and Parse the JSON data
 const rawData = fs.readFileSync('./form-testForm.form', 'utf8');
@@ -44,18 +47,6 @@ data.rows.forEach(row => {
   } else {
     property.type = typeMap[colData.type];
   }
-  
-
-  // default value
-  if (colData.defaultValue && colData.extraSettings.numberType === "float") {
-    property.default = Number.parseFloat(colData.defaultValue);
-  }
-  if (colData.defaultValue && colData.extraSettings.numberType === "integer") {
-    property.default = Number.parseInt(colData.defaultValue);
-  }
-  if (colData.hasOwnProperty('defaultValue')) {
-    property.default = colData.defaultValue;
-  }
 
   // min-max length
   if (colData.extraSettings.minLength) {
@@ -87,6 +78,25 @@ data.rows.forEach(row => {
   }
   if (colData.type === 'date' && colData.extraSettings.enableTime === true) {
     property.format = "date-time"
+  }
+
+  // default value
+  if (colData.hasOwnProperty('defaultValue')) {
+    property.default = colData.defaultValue;
+  }
+  if (colData.defaultValue && colData.extraSettings.numberType === "float") {
+    property.default = Number.parseFloat(colData.defaultValue);
+  }
+  if (colData.defaultValue && colData.extraSettings.numberType === "integer") {
+    property.default = Number.parseInt(colData.defaultValue);
+  }
+  // if date has defaultValue and has specific date-string format
+  if (colData.type === 'date' && colData.hasOwnProperty('defaultValue') && colData.extraSettings.hasOwnProperty('format')) {
+    if (colData.extraSettings.enableTime === true) {
+      property.default = dayjs(colData.defaultValue, colData.extraSettings.format).toISOString()
+    } else {
+      property.default = dayjs(colData.defaultValue, colData.extraSettings.format).format('YYYY-MM-DD')
+    }
   }
 
   // required form
