@@ -66,6 +66,7 @@
           "size": 12,
           "extraSettings": {
             "validationPanelDisplay": "show",
+            "numberFormat": ".,",
             "fixedFractionSize": true,
             "fractionSize": 2,
             "type": "one",
@@ -247,10 +248,10 @@
           "enabled": true,
           "visible": true,
           "ignore": false,
-          "label": "select",
+          "label": "Bayar Makan",
           "labelAlign": "top",
           "tabIndex": 0,
-          "value": "{{select}}",
+          "value": "{{bayarMakan}}",
           "id": "single-select1",
           "type": "select"
         }
@@ -370,7 +371,6 @@
             "disableWeekends": false,
             "calendarStartDay": "monday",
             "enableTime": true,
-            "timeInterval": 15,
             "format": "yyyy/MM/DD",
             "storeWithoutTime": true
           },
@@ -378,10 +378,10 @@
           "enabled": true,
           "visible": true,
           "ignore": false,
-          "label": "tanggal nikah",
+          "label": "tanggal gajian",
           "labelAlign": "top",
           "tabIndex": 0,
-          "value": "{{tanggalNikah}}",
+          "value": "{{tanggalGajian}}",
           "id": "date2",
           "type": "date"
         }
@@ -392,7 +392,7 @@
     "key": "testForm",
     "name": "test form",
     "description": "test form desc",
-    "version": "12",
+    "version": "14",
     "modelType": "form",
     "flowableDesignVersion": 3110,
     "palette": "flowable-work-form-palette"
