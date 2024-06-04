@@ -10,12 +10,11 @@
 
 
 ### progress
-- [ ] adaptor flowable form to rjsf format
+- [x] adaptor flowable form to rjsf format
   - [x] text input, number input
   - [x] password input, email input
   - [x] input select, radio, checkbox, switch
   - [x] input date
   - [x] input file
-  - [ ] number input format currency
 
 - [ ] adaptor rjsf format to flowable form
