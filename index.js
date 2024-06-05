@@ -19,8 +19,6 @@ const transformedData = {
   "properties": {}
 };
 
-// const fields = {};
-
 // main function JSONSchema
 data.rows.forEach(row => {
   const key = row.cols[0].value.replace('{{', '').replace('}}', '');
@@ -56,7 +54,7 @@ data.rows.forEach(row => {
     property.maxLength = colData.extraSettings.maxLength
   }
   
-  // emaili format
+  // email format
   if (colData.designInfo.stencilId === 'email') {
     property.format = "email"
   }
@@ -109,7 +107,6 @@ data.rows.forEach(row => {
 
 // console.log(transformedData);
 // console.log(JSON.stringify(transformedData));
-// console.log(fields);
 
 const uiSchema = {}
 

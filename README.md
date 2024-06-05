@@ -1,6 +1,7 @@
 # Adaptor Flowable form - React JSONSchema Form (RJSF)
 
 ## how to use:
+- install dependencies: run `npm install`
 - download flowable form file (.form) and move to the repo
 - rename the flowable form file to `form-testForm.form`
 - run 
@@ -8,6 +9,8 @@
   node index.js
   ```
 
+### dependencies
+- dayjs: to handle date-string formatting
 
 ### progress
 - [x] adaptor flowable form to rjsf format
