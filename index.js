@@ -19,22 +19,23 @@ const transformedData = {
   "properties": {}
 };
 
+const typeMap = {
+  'float': 'number',
+  'integer': 'integer',
+  'password': 'string',
+  'text': 'string',
+  'upload': 'string',
+  'select': 'string',
+  'radio': 'string',
+  'boolean': 'boolean',
+  'switcher': 'boolean',
+  'date': 'string',
+};
+
 // main function JSONSchema
 data.rows.forEach(row => {
   const key = row.cols[0].value.replace('{{', '').replace('}}', '');
   const colData = row.cols[0];
-  const typeMap = {
-    'float': 'number',
-    'integer': 'integer',
-    'password': 'string',
-    'text': 'string',
-    'upload': 'string',
-    'select': 'string',
-    'radio': 'string',
-    'boolean': 'boolean',
-    'switcher': 'boolean',
-    'date': 'string',
-  };
 
   const property = {
     title: colData.label,
