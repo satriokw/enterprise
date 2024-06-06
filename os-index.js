@@ -6,11 +6,11 @@ const typeMap = {
   'decimal': 'number',
   'integer': 'integer',
   'text': 'string',
+  'password': 'string',
   'upload': 'string',
-  'select': 'string',
-  'radio': 'string',
+  'radio-buttons': 'string',
+  'dropdown': 'string',
   'boolean': 'boolean',
-  'switcher': 'boolean',
   'date': 'string',
 };
 
@@ -42,9 +42,19 @@ data.fields.forEach(field => {
     property.pattern = `/^${field.params.regexPattern}$/`
   }
 
+  // radio-button and dropdown
+  if (type === 'dropdown' || type === 'radio-buttons') {
+    property.enum = field.options.map(item => item.name)
+  }
+
   // upload
   if (type === 'upload') {
     property.format = "data-url"
+  }
+
+  // date
+  if (type === 'date') {
+    property.format = "date"
   }
 
   // required form
@@ -55,7 +65,7 @@ data.fields.forEach(field => {
   transformedData.properties[id] = property;
 });
 
-console.log(transformedData);
+console.log(JSON.stringify(transformedData));
 
 // function UISchema convert
 const uiSchema = {}
@@ -71,9 +81,22 @@ data.fields.forEach(field => {
   if (field.readOnly) {
     uiProperty["ui:readonly"] = field.readOnly
   }
+  // password
+  if (field.type === 'password') {
+    uiProperty["ui:widget"] = 'password'
+  }
+
+  // radio-buttons
+  if (field.type === 'radio-buttons'
+  ) {
+    uiProperty["ui:widget"] = "radio",
+    uiProperty["ui:options"] = {
+      "inilne": true
+    }
+  }
 
   
   uiSchema[id] = uiProperty
 });
 
-console.log(uiSchema)
+console.log(JSON.stringify(uiSchema))

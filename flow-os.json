@@ -1,7 +1,7 @@
 {
-  "id": "94844a9c-23c2-11ef-9606-024268d89169",
-  "name": "Form Input Data Bayu 1",
-  "key": "form-input-data-bayu-1",
+  "id": "66249fe1-23df-11ef-9606-024268d89169",
+  "name": "Form Input Data Bayu 2",
+  "key": "form-input-data-bayu-2",
   "version": 1,
   "url": "http://flowable.ilab360.dev/flowable-rest/form-api/form/model",
   "fields": [
@@ -38,16 +38,16 @@
       "fieldType": "FormField",
       "id": "password",
       "name": "Password",
-      "type": "text",
+      "type": "password",
       "value": null,
       "required": true,
       "readOnly": false,
       "overrideId": false,
-      "placeholder": null,
+      "placeholder": "Password",
       "params": {
         "minLength": "8",
         "maxLength": "16",
-        "mask": "*"
+        "passwordunmask": true
       },
       "layout": null
     },
@@ -94,7 +94,7 @@
       "type": "date",
       "value": null,
       "required": false,
-      "readOnly": true,
+      "readOnly": false,
       "overrideId": false,
       "placeholder": null,
       "layout": null
