@@ -1,4 +1,5 @@
 const data = require("./flow-os.json")
+const fs = require('node:fs');
 
 // console.log(data)
 
@@ -37,6 +38,12 @@ data.fields.forEach(field => {
     property.maxLength = Number.parseInt(field.params.maxLength)
   }
 
+  // Check if either the id or the name contains the string "email" to format email
+  if (field.id.toLowerCase().includes("email") || field.name.toLowerCase().includes("email")) {
+    // Set the variable property_format to "email"
+    property.format = "email";
+  }
+
   // pattern
   if (field.hasOwnProperty("params") && field.params.regexPattern) {
     property.pattern = `/^${field.params.regexPattern}$/`
@@ -57,6 +64,14 @@ data.fields.forEach(field => {
     property.format = "date"
   }
 
+  // default value
+  if (field.hasOwnProperty('value') && field.value !== null) {
+    property.default = field.value;
+  }
+  if (field.type === "boolean" && field.hasOwnProperty('value') && field.value === null) {
+    property.default = false;
+  }
+
   // required form
   if (field.required) {
     transformedData.required.push(id);
@@ -65,7 +80,8 @@ data.fields.forEach(field => {
   transformedData.properties[id] = property;
 });
 
-console.log(JSON.stringify(transformedData));
+// console.log(transformedData)  // print json on terminal (easier to read)
+// console.log(JSON.stringify(transformedData));  // print string JSON format to paste on playground
 
 // function UISchema convert
 const uiSchema = {}
@@ -99,4 +115,21 @@ data.fields.forEach(field => {
   uiSchema[id] = uiProperty
 });
 
-console.log(JSON.stringify(uiSchema))
+// console.log(uiSchema)  // print json on terminal (easier to read)
+// console.log(JSON.stringify(uiSchema))  // print string JSON format to paste on playground
+
+// write to file
+fs.writeFile('/Users/koinworks/labs/sandbox/enterprise/output.json', JSON.stringify(transformedData), err => {
+  if (err) {
+    console.error(err);
+  } else {
+    console.log("success");
+  }
+});
+fs.writeFile('/Users/koinworks/labs/sandbox/enterprise/output-ui.json', JSON.stringify(uiSchema), err => {
+  if (err) {
+    console.error(err);
+  } else {
+    console.log("success");
+  }
+});
