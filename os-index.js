@@ -25,59 +25,69 @@ const transformedData = {
 };
 data.fields.forEach(field => {
   const { id, name, type } = field;
-  const property = {
-    title: name,
-    type: typeMap[type]
-  };
 
-  // min-max length
-  if (field.hasOwnProperty("params") && field.params.minLength) {
-    property.minLength = Number.parseInt(field.params.minLength)
-  } 
-  if (field.hasOwnProperty("params") && field.params.maxLength) {
-    property.maxLength = Number.parseInt(field.params.maxLength)
-  }
+  // if the type is not on the typeMap, it will skip it.
+  if (type in typeMap) {
+    const property = {
+      title: name,
+      type: typeMap[type],
+    };
 
-  // Check if either the id or the name contains the string "email" to format email
-  if (field.id.toLowerCase().includes("email") || field.name.toLowerCase().includes("email")) {
-    // Set the variable property_format to "email"
-    property.format = "email";
-  }
+    // min-max length
+    if (field.hasOwnProperty("params") && field.params.minLength) {
+      property.minLength = Number.parseInt(field.params.minLength);
+    }
+    if (field.hasOwnProperty("params") && field.params.maxLength) {
+      property.maxLength = Number.parseInt(field.params.maxLength);
+    }
 
-  // pattern
-  if (field.hasOwnProperty("params") && field.params.regexPattern) {
-    property.pattern = `/^${field.params.regexPattern}$/`
-  }
+    // Check if either the id or the name contains the string "email" to format email
+    if (
+      field.id.toLowerCase().includes("email") ||
+      field.name.toLowerCase().includes("email")
+    ) {
+      // Set the variable property_format to "email"
+      property.format = "email";
+    }
 
-  // radio-button and dropdown
-  if (type === 'dropdown' || type === 'radio-buttons') {
-    property.enum = field.options.map(item => item.name)
-  }
+    // pattern
+    if (field.hasOwnProperty("params") && field.params.regexPattern) {
+      property.pattern = `/^${field.params.regexPattern}$/`;
+    }
 
-  // upload
-  if (type === 'upload') {
-    property.format = "data-url"
-  }
+    // radio-button and dropdown
+    if (type === "dropdown" || type === "radio-buttons") {
+      property.enum = field.options.map((item) => item.name);
+    }
 
-  // date
-  if (type === 'date') {
-    property.format = "date"
-  }
+    // upload
+    if (type === "upload") {
+      property.format = "data-url";
+    }
 
-  // default value
-  if (field.hasOwnProperty('value') && field.value !== null) {
-    property.default = field.value;
-  }
-  if (field.type === "boolean" && field.hasOwnProperty('value') && field.value === null) {
-    property.default = false;
-  }
+    // date
+    if (type === "date") {
+      property.format = "date";
+    }
 
-  // required form
-  if (field.required) {
-    transformedData.required.push(id);
-  }
+    // default value
+    if (field.hasOwnProperty("value") && field.value !== null) {
+      property.default = field.value;
+    }
+    if (
+      field.type === "boolean" &&
+      field.hasOwnProperty("value") &&
+      field.value === null
+    ) {
+      property.default = false;
+    }
 
-  transformedData.properties[id] = property;
+    // required form
+    if (field.required) {
+      transformedData.required.push(id);
+    }
+    transformedData.properties[id] = property;
+  }
 });
 
 // console.log(transformedData)  // print json on terminal (easier to read)
@@ -87,32 +97,35 @@ data.fields.forEach(field => {
 const uiSchema = {}
 data.fields.forEach(field => {
   const { id } = field;
-  const uiProperty = {}
 
-  // placeholder
-  if (field.placeholder) {
-    uiProperty["ui:placeholder"] = field.placeholder
-  }
-  // readonly
-  if (field.readOnly) {
-    uiProperty["ui:readonly"] = field.readOnly
-  }
-  // password
-  if (field.type === 'password') {
-    uiProperty["ui:widget"] = 'password'
-  }
+  // if the type is not on the typeMap, it will skip it.
+  if (type in typeMap) {
+    const uiProperty = {}
 
-  // radio-buttons
-  if (field.type === 'radio-buttons'
-  ) {
-    uiProperty["ui:widget"] = "radio",
-    uiProperty["ui:options"] = {
-      "inilne": true
+    // placeholder
+    if (field.placeholder) {
+      uiProperty["ui:placeholder"] = field.placeholder
     }
-  }
+    // readonly
+    if (field.readOnly) {
+      uiProperty["ui:readonly"] = field.readOnly
+    }
+    // password
+    if (field.type === 'password') {
+      uiProperty["ui:widget"] = 'password'
+    }
 
-  
-  uiSchema[id] = uiProperty
+    // radio-buttons
+    if (field.type === 'radio-buttons'
+    ) {
+      uiProperty["ui:widget"] = "radio",
+      uiProperty["ui:options"] = {
+        "inilne": true
+      }
+    }
+
+    uiSchema[id] = uiProperty
+  }
 });
 
 // console.log(uiSchema)  // print json on terminal (easier to read)

@@ -1,0 +1,313 @@
+{
+  "id": "dfe52e9f-23bb-11ef-9606-024268d89169",
+  "name": "Form Biz",
+  "description": null,
+  "key": "form-biz",
+  "version": 4,
+  "fields": [
+    {
+      "fieldType": "FormField",
+      "id": "header_biz_form",
+      "name": "BIZ Form",
+      "type": "headline",
+      "value": null,
+      "required": false,
+      "readOnly": false,
+      "overrideId": true,
+      "placeholder": null,
+      "layout": null
+    },
+    {
+      "fieldType": "FormField",
+      "id": "borrower_mail",
+      "name": "Email Peminjam",
+      "type": "text",
+      "value": null,
+      "required": true,
+      "readOnly": false,
+      "overrideId": true,
+      "placeholder": "Email",
+      "layout": null
+    },
+    {
+      "fieldType": "OptionFormField",
+      "id": "newrenewaltopup",
+      "name": "New Renewal Topup",
+      "type": "dropdown",
+      "value": null,
+      "required": true,
+      "readOnly": false,
+      "overrideId": false,
+      "placeholder": null,
+      "layout": null,
+      "optionType": null,
+      "hasEmptyValue": true,
+      "options": [
+        {
+          "id": null,
+          "name": "Select New Renewal Topup"
+        },
+        {
+          "id": null,
+          "name": "New"
+        },
+        {
+          "id": null,
+          "name": "Renewal"
+        },
+        {
+          "id": null,
+          "name": "Top Up"
+        }
+      ],
+      "optionsExpression": null
+    },
+    {
+      "fieldType": "FormField",
+      "id": "company_name",
+      "name": "Nama Perusahaan Peminjam / Nama Toko (Alphabet Only)",
+      "type": "text",
+      "value": null,
+      "required": true,
+      "readOnly": false,
+      "overrideId": true,
+      "placeholder": null,
+      "layout": null
+    },
+    {
+      "fieldType": "FormField",
+      "id": "lead_code",
+      "name": "Unique Lead Code",
+      "type": "integer",
+      "value": null,
+      "required": true,
+      "readOnly": false,
+      "overrideId": true,
+      "placeholder": null,
+      "layout": null
+    },
+    {
+      "fieldType": "FormField",
+      "id": "phone_number_borrower",
+      "name": "No. Telepon Peminjam",
+      "type": "text",
+      "value": null,
+      "required": true,
+      "readOnly": false,
+      "overrideId": true,
+      "placeholder": "62xxx...",
+      "layout": null
+    },
+    {
+      "fieldType": "OptionFormField",
+      "id": "company_type",
+      "name": "Tipe Perusahaan",
+      "type": "dropdown",
+      "value": null,
+      "required": true,
+      "readOnly": false,
+      "overrideId": true,
+      "placeholder": "Select Company Type",
+      "layout": null,
+      "optionType": null,
+      "hasEmptyValue": true,
+      "options": [
+        {
+          "id": null,
+          "name": "Select Company Type"
+        },
+        {
+          "id": null,
+          "name": "Home business"
+        },
+        {
+          "id": null,
+          "name": "CV"
+        },
+        {
+          "id": null,
+          "name": "PT"
+        }
+      ],
+      "optionsExpression": null
+    },
+    {
+      "fieldType": "ExpressionFormField",
+      "id": "label",
+      "name": "Label",
+      "type": "expression",
+      "value": null,
+      "required": false,
+      "readOnly": false,
+      "overrideId": false,
+      "placeholder": null,
+      "layout": null,
+      "expression": "Type Peminjam: ${company_type}"
+    },
+    {
+      "fieldType": "FormField",
+      "id": "nik_pic",
+      "name": "NIK PIC",
+      "type": "text",
+      "value": null,
+      "required": true,
+      "readOnly": false,
+      "overrideId": true,
+      "placeholder": null,
+      "layout": null
+    },
+    {
+      "fieldType": "FormField",
+      "id": "npwp",
+      "name": "NPWP",
+      "type": "text",
+      "value": null,
+      "required": false,
+      "readOnly": false,
+      "overrideId": false,
+      "placeholder": null,
+      "layout": null
+    },
+    {
+      "fieldType": "OptionFormField",
+      "id": "gender",
+      "name": "Jenis Kelamin",
+      "type": "dropdown",
+      "value": null,
+      "required": true,
+      "readOnly": false,
+      "overrideId": true,
+      "placeholder": null,
+      "layout": null,
+      "optionType": null,
+      "hasEmptyValue": true,
+      "options": [
+        {
+          "id": null,
+          "name": "Select a Gender"
+        },
+        {
+          "id": null,
+          "name": "Male"
+        },
+        {
+          "id": null,
+          "name": "Female"
+        }
+      ],
+      "optionsExpression": null
+    },
+    {
+      "fieldType": "FormField",
+      "id": "birth_palce",
+      "name": "Tempat Lahir",
+      "type": "text",
+      "value": null,
+      "required": true,
+      "readOnly": false,
+      "overrideId": true,
+      "placeholder": null,
+      "layout": null
+    },
+    {
+      "fieldType": "FormField",
+      "id": "birth_date",
+      "name": "Tanggal Lahir",
+      "type": "date",
+      "value": null,
+      "required": true,
+      "readOnly": false,
+      "overrideId": true,
+      "placeholder": "",
+      "layout": null
+    },
+    {
+      "fieldType": "OptionFormField",
+      "id": "religion",
+      "name": "Agama",
+      "type": "dropdown",
+      "value": null,
+      "required": true,
+      "readOnly": false,
+      "overrideId": true,
+      "placeholder": "Select a Religion",
+      "layout": null,
+      "optionType": null,
+      "hasEmptyValue": true,
+      "options": [
+        {
+          "id": null,
+          "name": "Select a Religion"
+        },
+        {
+          "id": null,
+          "name": "Islam"
+        },
+        {
+          "id": null,
+          "name": "Katholik"
+        },
+        {
+          "id": null,
+          "name": "Kristen"
+        },
+        {
+          "id": null,
+          "name": "Budha"
+        },
+        {
+          "id": null,
+          "name": "Hindu"
+        },
+        {
+          "id": null,
+          "name": "Khonghucu"
+        },
+        {
+          "id": null,
+          "name": "Other"
+        }
+      ],
+      "optionsExpression": null
+    },
+    {
+      "fieldType": "OptionFormField",
+      "id": "marital_status",
+      "name": "Status Perkawinan",
+      "type": "dropdown",
+      "value": null,
+      "required": true,
+      "readOnly": false,
+      "overrideId": true,
+      "placeholder": null,
+      "layout": null,
+      "optionType": null,
+      "hasEmptyValue": true,
+      "options": [
+        {
+          "id": null,
+          "name": "Select a Marital Status"
+        },
+        {
+          "id": null,
+          "name": "BELUM KAWIN"
+        },
+        {
+          "id": null,
+          "name": "KAWIN"
+        },
+        {
+          "id": null,
+          "name": "CERAI HIDUP"
+        },
+        {
+          "id": null,
+          "name": "CERAI MATI"
+        }
+      ],
+      "optionsExpression": null
+    }
+  ],
+  "outcomes": [],
+  "outcomeVariableName": null
+}
