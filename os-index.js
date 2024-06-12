@@ -1,4 +1,4 @@
-const data = require("./flow-os.json")
+const data = require("./2-biz-form-input-data")
 const fs = require('node:fs');
 
 // console.log(data)
@@ -99,7 +99,7 @@ data.fields.forEach(field => {
   const { id } = field;
 
   // if the type is not on the typeMap, it will skip it.
-  if (type in typeMap) {
+  if (field.type in typeMap) {
     const uiProperty = {}
 
     // placeholder
