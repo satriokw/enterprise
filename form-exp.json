@@ -1,0 +1,109 @@
+{
+  "id": "df0c1d54-3e9f-11ef-ad00-0a1fc99eedd3",
+  "name": "Biz Form Full Custom Expression",
+  "description": null,
+  "key": "bizFormCustomExpression",
+  "version": 4,
+  "fields": [
+    {
+      "fieldType": "FormField",
+      "id": "bizform",
+      "name": "BIZ Form",
+      "type": "headline",
+      "value": null,
+      "required": false,
+      "readOnly": false,
+      "overrideId": false,
+      "placeholder": null,
+      "layout": null
+    },
+    {
+      "fieldType": "FormField",
+      "id": "borrowerMail",
+      "name": "Email Peminjam",
+      "type": "text",
+      "value": null,
+      "required": true,
+      "readOnly": false,
+      "overrideId": true,
+      "placeholder": null,
+      "layout": null
+    },
+    {
+      "fieldType": "ExpressionFormField",
+      "id": "label",
+      "name": "Label",
+      "type": "expression",
+      "value": "@script=\"json\";\n@data={\n\"id\":\"renewalTypes\",\n\"type\": \"dd\",\n\"label\":\"New Renewal Topup\",\n\"value\": \"https://filter-invoice.koin.works/v2/renewal_types\"\n}",
+      "required": false,
+      "readOnly": false,
+      "overrideId": false,
+      "placeholder": null,
+      "layout": null,
+      "expression": "@script=\"json\";\n@data={\n\"id\":\"renewalTypes\",\n\"type\": \"dd\",\n\"label\":\"New Renewal Topup\",\n\"value\": \"https://filter-invoice.koin.works/v2/renewal_types\"\n}"
+    },
+    {
+      "fieldType": "FormField",
+      "id": "companyName",
+      "name": "Nama Perusahaan Peminjam / Nama Toko (Alphabet Only)",
+      "type": "text",
+      "value": null,
+      "required": true,
+      "readOnly": false,
+      "overrideId": true,
+      "placeholder": null,
+      "layout": null
+    },
+    {
+      "fieldType": "FormField",
+      "id": "uniqueLeadCode",
+      "name": "Unique Lead Code:",
+      "type": "text",
+      "value": null,
+      "required": false,
+      "readOnly": false,
+      "overrideId": true,
+      "placeholder": null,
+      "layout": null
+    },
+    {
+      "fieldType": "FormField",
+      "id": "borrowerPhoneNumber",
+      "name": "No. Telepon Peminjam:",
+      "type": "text",
+      "value": null,
+      "required": true,
+      "readOnly": false,
+      "overrideId": true,
+      "placeholder": null,
+      "layout": null
+    },
+    {
+      "fieldType": "ExpressionFormField",
+      "id": "label",
+      "name": "Label",
+      "type": "expression",
+      "value": "@script=\"json\";\n@data={\n\"id\": \"companyType\",\n\"type\": \"dd\",\n\"label\":\"Tipe Perusahaan\",\n\"value\": \"https://filter-invoice.koin.works/v2/companies\"\n}",
+      "required": false,
+      "readOnly": false,
+      "overrideId": false,
+      "placeholder": null,
+      "layout": null,
+      "expression": "@script=\"json\";\n@data={\n\"id\": \"companyType\",\n\"type\": \"dd\",\n\"label\":\"Tipe Perusahaan\",\n\"value\": \"https://filter-invoice.koin.works/v2/companies\"\n}"
+    },
+    {
+      "fieldType": "FormField",
+      "id": "nikPic",
+      "name": "NIK PIC",
+      "type": "text",
+      "value": null,
+      "required": true,
+      "readOnly": false,
+      "overrideId": true,
+      "placeholder": null,
+      "layout": null
+    }
+  ],
+  "outcomes": [],
+  "outcomeVariableName": null
+}
