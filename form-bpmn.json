@@ -1,0 +1,161 @@
+{
+  "components": [
+    {
+      "label": "Nama",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_1ymkso8",
+        "columns": null
+      },
+      "id": "Field_07yruno",
+      "key": "textfield_qqlvs",
+      "readonly": false,
+      "properties": {},
+      "validate": {
+        "required": true
+      },
+      "defaultValue": "bambang pacul"
+    },
+    {
+      "label": "kosong",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_0024q52",
+        "columns": null
+      },
+      "id": "Field_1183f5t",
+      "key": "textfield_3zb2xr",
+      "readonly": false
+    },
+    {
+      "subtype": "date",
+      "dateLabel": "tanggal meeting",
+      "label": "Date time",
+      "type": "datetime",
+      "layout": {
+        "row": "Row_07x4i3o",
+        "columns": null
+      },
+      "id": "Field_1khbuur",
+      "key": "datetime_l7hhpi",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "values": [
+        {
+          "label": "Yes",
+          "value": "yes"
+        },
+        {
+          "label": "No",
+          "value": "no"
+        }
+      ],
+      "label": "Makan gak bang?",
+      "type": "radio",
+      "layout": {
+        "row": "Row_0kc31d3",
+        "columns": null
+      },
+      "id": "Field_050f0sr",
+      "key": "radio_n9clm",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "values": [
+        {
+          "label": "Burger Makmur",
+          "value": "makmur"
+        },
+        {
+          "label": "Taigersprung",
+          "value": "taigersprung"
+        },
+        {
+          "label": "Empat Sehat",
+          "value": "empat-sehat"
+        },
+        {
+          "label": "Yamie Kranggan",
+          "value": "yamie-kranggan"
+        }
+      ],
+      "label": "tempat makan",
+      "type": "select",
+      "layout": {
+        "row": "Row_0s3zqxq",
+        "columns": null
+      },
+      "id": "Field_02rbyix",
+      "key": "select_td6o8",
+      "searchable": true
+    },
+    {
+      "label": "Budget makan",
+      "type": "number",
+      "layout": {
+        "row": "Row_12ysy8e",
+        "columns": null
+      },
+      "id": "Field_0hoezj0",
+      "key": "number_l1frar",
+      "increment": "1000",
+      "appearance": {
+        "prefixAdorner": "Rp"
+      },
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "values": [
+        {
+          "label": "Makan",
+          "value": "makan"
+        },
+        {
+          "label": "Minum",
+          "value": "minum"
+        },
+        {
+          "label": "Buah",
+          "value": "buah"
+        },
+        {
+          "label": "Kerupuk",
+          "value": "kerupuk"
+        }
+      ],
+      "label": "Makan bang",
+      "type": "checklist",
+      "layout": {
+        "row": "Row_19wsxcc",
+        "columns": null
+      },
+      "id": "Field_1pzv1kb",
+      "key": "checklist_xmz3na",
+      "description": "makan apa bang"
+    },
+    {
+      "action": "submit",
+      "key": "submit",
+      "label": "Submit",
+      "type": "button",
+      "id": "Field_10hf3oj",
+      "layout": {
+        "row": "Row_19wfqme"
+      }
+    }
+  ],
+  "schemaVersion": 16,
+  "exporter": {
+    "name": "form-js (https://demo.bpmn.io)",
+    "version": "1.8.3"
+  },
+  "type": "default",
+  "id": "form-makan-siang"
+}

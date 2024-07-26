@@ -102,6 +102,587 @@
       "overrideId": true,
       "placeholder": null,
       "layout": null
+    },
+    {
+      "fieldType": "FormField",
+      "id": "npwp",
+      "name": "NPWP",
+      "type": "text",
+      "value": null,
+      "required": true,
+      "readOnly": false,
+      "overrideId": false,
+      "placeholder": null,
+      "layout": null
+    },
+    {
+      "fieldType": "FormField",
+      "id": "siupNibNumber",
+      "name": "Nomor SIUP/NIB",
+      "type": "text",
+      "value": null,
+      "required": false,
+      "readOnly": false,
+      "overrideId": true,
+      "placeholder": null,
+      "layout": null
+    },
+    {
+      "fieldType": "OptionFormField",
+      "id": "gender",
+      "name": "Jenis Kelamin",
+      "type": "dropdown",
+      "value": null,
+      "required": false,
+      "readOnly": false,
+      "overrideId": true,
+      "placeholder": null,
+      "layout": null,
+      "optionType": null,
+      "hasEmptyValue": true,
+      "options": [
+        {
+          "id": "1",
+          "name": "Male"
+        },
+        {
+          "id": "2",
+          "name": "Female"
+        }
+      ],
+      "optionsExpression": "${genderData}"
+    },
+    {
+      "fieldType": "FormField",
+      "id": "birthPlace",
+      "name": "Tempat Lahir",
+      "type": "text",
+      "value": null,
+      "required": true,
+      "readOnly": false,
+      "overrideId": true,
+      "placeholder": null,
+      "layout": null
+    },
+    {
+      "fieldType": "FormField",
+      "id": "dataBirht",
+      "name": "Tanggal Lahir",
+      "type": "date",
+      "value": null,
+      "required": true,
+      "readOnly": false,
+      "overrideId": true,
+      "placeholder": null,
+      "layout": null
+    },
+    {
+      "fieldType": "OptionFormField",
+      "id": "religion",
+      "name": "Agama",
+      "type": "dropdown",
+      "value": null,
+      "required": false,
+      "readOnly": false,
+      "overrideId": true,
+      "placeholder": null,
+      "layout": null,
+      "optionType": null,
+      "hasEmptyValue": true,
+      "options": [
+        {
+          "id": "1",
+          "name": "Islam"
+        },
+        {
+          "id": "2",
+          "name": "Khatolik"
+        },
+        {
+          "id": "3",
+          "name": "Kristen"
+        },
+        {
+          "id": "4",
+          "name": "Budha"
+        },
+        {
+          "id": "5",
+          "name": "Hindu"
+        },
+        {
+          "id": "6",
+          "name": "Khonghucu"
+        },
+        {
+          "id": "7",
+          "name": "Other"
+        }
+      ],
+      "optionsExpression": "${religionData}"
+    },
+    {
+      "fieldType": "OptionFormField",
+      "id": "maritalStatus",
+      "name": "Status Perkawinan",
+      "type": "dropdown",
+      "value": null,
+      "required": true,
+      "readOnly": false,
+      "overrideId": true,
+      "placeholder": null,
+      "layout": null,
+      "optionType": null,
+      "hasEmptyValue": true,
+      "options": [
+        {
+          "id": "1",
+          "name": "BELUM KAWIN"
+        },
+        {
+          "id": "2",
+          "name": "KAWIN"
+        },
+        {
+          "id": "3",
+          "name": "CERAI HIDUP"
+        },
+        {
+          "id": "4",
+          "name": "CERAI MATI"
+        }
+      ],
+      "optionsExpression": "${maritalStatusData}"
+    },
+    {
+      "fieldType": "OptionFormField",
+      "id": "education",
+      "name": "Pendidikan",
+      "type": "dropdown",
+      "value": null,
+      "required": true,
+      "readOnly": false,
+      "overrideId": true,
+      "placeholder": null,
+      "layout": null,
+      "optionType": null,
+      "hasEmptyValue": true,
+      "options": [
+        {
+          "id": "1",
+          "name": "SD"
+        },
+        {
+          "id": "2",
+          "name": "SMP"
+        },
+        {
+          "id": "3",
+          "name": "SMA"
+        },
+        {
+          "id": "4",
+          "name": "DIPLOMA"
+        },
+        {
+          "id": "5",
+          "name": "S1"
+        },
+        {
+          "id": "6",
+          "name": "S2"
+        },
+        {
+          "id": "7",
+          "name": "S3"
+        }
+      ],
+      "optionsExpression": "${educationData}"
+    },
+    {
+      "fieldType": "OptionFormField",
+      "id": "occupancy",
+      "name": "Pekerjaan",
+      "type": "dropdown",
+      "value": null,
+      "required": false,
+      "readOnly": false,
+      "overrideId": true,
+      "placeholder": null,
+      "layout": null,
+      "optionType": null,
+      "hasEmptyValue": true,
+      "options": [
+        {
+          "id": "1",
+          "name": "012-Pelajar/Mahasiswa"
+        },
+        {
+          "id": "2",
+          "name": "013-Wiraswasta"
+        },
+        {
+          "id": "3",
+          "name": "033-Pertukangan dan pengrajin (tukang kayu, pengrajin kulit, dan lain-lain)"
+        },
+        {
+          "id": "4",
+          "name": "034-Ibu rumah tangga"
+        },
+        {
+          "id": "5",
+          "name": "035-Pekerja informal (asisten rumah tangga, asongan, dll)"
+        },
+        {
+          "id": "6",
+          "name": "036-Pejabat negara/penyelenggara negara"
+        },
+        {
+          "id": "7",
+          "name": "037-Pegawai pemerintahan/lembaga negara (selain pejabat/penyelenggara negara)"
+        },
+        {
+          "id": "8",
+          "name": "099-Lain-lain"
+        }
+      ],
+      "optionsExpression": "${occupancyData}"
+    },
+    {
+      "fieldType": "FormField",
+      "id": "borrowerAddress",
+      "name": "Alamat KTP Peminjam",
+      "type": "text",
+      "value": null,
+      "required": false,
+      "readOnly": false,
+      "overrideId": true,
+      "placeholder": null,
+      "layout": null
+    },
+    {
+      "fieldType": "FormField",
+      "id": "borrowerProvince",
+      "name": "Provinsi KTP Peminjam",
+      "type": "text",
+      "value": null,
+      "required": false,
+      "readOnly": false,
+      "overrideId": true,
+      "placeholder": null,
+      "layout": null
+    },
+    {
+      "fieldType": "FormField",
+      "id": "borrowerKabupatenKota",
+      "name": "Kabupaten Kota KTP Peminjam",
+      "type": "text",
+      "value": null,
+      "required": false,
+      "readOnly": false,
+      "overrideId": true,
+      "placeholder": null,
+      "layout": null
+    },
+    {
+      "fieldType": "FormField",
+      "id": "borrowerKecamatan",
+      "name": "Kecamatan KTP Peminjam",
+      "type": "text",
+      "value": null,
+      "required": false,
+      "readOnly": false,
+      "overrideId": true,
+      "placeholder": null,
+      "layout": null
+    },
+    {
+      "fieldType": "FormField",
+      "id": "borrowerKelurahan",
+      "name": "Kelurahan KTP Peminjam",
+      "type": "text",
+      "value": null,
+      "required": false,
+      "readOnly": false,
+      "overrideId": true,
+      "placeholder": null,
+      "layout": null
+    },
+    {
+      "fieldType": "FormField",
+      "id": "borrowerPostalCode",
+      "name": "Kode Pos KTP Peminjam",
+      "type": "text",
+      "value": null,
+      "required": false,
+      "readOnly": false,
+      "overrideId": true,
+      "placeholder": null,
+      "layout": null
+    },
+    {
+      "fieldType": "FormField",
+      "id": "domisiliSimilarAddress",
+      "name": "Klik Checklist Jika Alamat Domisili Sama Dengan KTP",
+      "type": "boolean",
+      "value": null,
+      "required": false,
+      "readOnly": false,
+      "overrideId": true,
+      "placeholder": null,
+      "layout": null
+    },
+    {
+      "fieldType": "FormField",
+      "id": "domisiliAddress",
+      "name": "Alamat Domisili Peminjam",
+      "type": "text",
+      "value": null,
+      "required": false,
+      "readOnly": false,
+      "overrideId": true,
+      "placeholder": null,
+      "layout": null
+    },
+    {
+      "fieldType": "FormField",
+      "id": "domisiliProvince",
+      "name": "Provinsi Domisili Peminjam:",
+      "type": "text",
+      "value": null,
+      "required": false,
+      "readOnly": false,
+      "overrideId": true,
+      "placeholder": null,
+      "layout": null
+    },
+    {
+      "fieldType": "FormField",
+      "id": "domisilKabupaten",
+      "name": "Kabupaten Kota Domisili Peminjam",
+      "type": "text",
+      "value": null,
+      "required": false,
+      "readOnly": false,
+      "overrideId": true,
+      "placeholder": null,
+      "layout": null
+    },
+    {
+      "fieldType": "FormField",
+      "id": "domisiliKecamatan",
+      "name": "Kecamatan Domisili Peminjam",
+      "type": "text",
+      "value": null,
+      "required": false,
+      "readOnly": false,
+      "overrideId": true,
+      "placeholder": null,
+      "layout": null
+    },
+    {
+      "fieldType": "FormField",
+      "id": "domisiliKelurahan",
+      "name": "Kelurahan Domisili Peminjam",
+      "type": "text",
+      "value": null,
+      "required": false,
+      "readOnly": false,
+      "overrideId": true,
+      "placeholder": null,
+      "layout": null
+    },
+    {
+      "fieldType": "FormField",
+      "id": "domisiliPostalCode",
+      "name": "Kode Pos Domisili Peminjam",
+      "type": "text",
+      "value": null,
+      "required": false,
+      "readOnly": false,
+      "overrideId": true,
+      "placeholder": null,
+      "layout": null
+    },
+    {
+      "fieldType": "FormField",
+      "id": "borrowerCompanyAddress",
+      "name": "Alamat Kantor Peminjam",
+      "type": "text",
+      "value": null,
+      "required": false,
+      "readOnly": false,
+      "overrideId": true,
+      "placeholder": null,
+      "layout": null
+    },
+    {
+      "fieldType": "FormField",
+      "id": "borrowerCompanyProvince",
+      "name": "Provinsi Kantor Peminjam",
+      "type": "text",
+      "value": null,
+      "required": false,
+      "readOnly": false,
+      "overrideId": true,
+      "placeholder": null,
+      "layout": null
+    },
+    {
+      "fieldType": "FormField",
+      "id": "borrowerCompanyKabupaten",
+      "name": "Kabupaten Kota Kantor Peminjam",
+      "type": "text",
+      "value": null,
+      "required": false,
+      "readOnly": false,
+      "overrideId": true,
+      "placeholder": null,
+      "layout": null
+    },
+    {
+      "fieldType": "FormField",
+      "id": "borrowerCompanyKecamatan",
+      "name": "Kecamatan Kantor Peminjam",
+      "type": "text",
+      "value": null,
+      "required": false,
+      "readOnly": false,
+      "overrideId": true,
+      "placeholder": null,
+      "layout": null
+    },
+    {
+      "fieldType": "FormField",
+      "id": "borrowerCompanyKelurahan",
+      "name": "Kelurahan Kantor Peminjam",
+      "type": "text",
+      "value": null,
+      "required": false,
+      "readOnly": false,
+      "overrideId": true,
+      "placeholder": null,
+      "layout": null
+    },
+    {
+      "fieldType": "FormField",
+      "id": "borrowerCompanyPostalCode",
+      "name": "Kode Pos Kantor Peminjam",
+      "type": "text",
+      "value": null,
+      "required": false,
+      "readOnly": false,
+      "overrideId": true,
+      "placeholder": null,
+      "layout": null
+    },
+    {
+      "fieldType": "FormField",
+      "id": "motherName",
+      "name": "Nama Ibu Kandung",
+      "type": "text",
+      "value": null,
+      "required": false,
+      "readOnly": false,
+      "overrideId": true,
+      "placeholder": null,
+      "layout": null
+    },
+    {
+      "fieldType": "FormField",
+      "id": "documentLinkGdrive",
+      "name": "Link Dokumen Gdrive",
+      "type": "text",
+      "value": null,
+      "required": false,
+      "readOnly": false,
+      "overrideId": true,
+      "placeholder": null,
+      "layout": null
+    },
+    {
+      "fieldType": "FormField",
+      "id": "tanggunganTotal",
+      "name": "Jumlah Tanggungan",
+      "type": "integer",
+      "value": null,
+      "required": false,
+      "readOnly": false,
+      "overrideId": true,
+      "placeholder": null,
+      "layout": null
+    },
+    {
+      "fieldType": "FormField",
+      "id": "contactNameEmergency",
+      "name": "Nama Kontak Emergency",
+      "type": "text",
+      "value": null,
+      "required": false,
+      "readOnly": false,
+      "overrideId": true,
+      "placeholder": null,
+      "layout": null
+    },
+    {
+      "fieldType": "FormField",
+      "id": "emergencyContactMail",
+      "name": "Email Kontak Emergency",
+      "type": "text",
+      "value": null,
+      "required": false,
+      "readOnly": false,
+      "overrideId": true,
+      "placeholder": null,
+      "layout": null
+    },
+    {
+      "fieldType": "FormField",
+      "id": "emergencyContactPhone",
+      "name": "Nomor Telepon Kontak Emergency",
+      "type": "text",
+      "value": null,
+      "required": false,
+      "readOnly": false,
+      "overrideId": true,
+      "placeholder": null,
+      "layout": null
+    },
+    {
+      "fieldType": "FormField",
+      "id": "emergencyContaactMobilePhone",
+      "name": "Nomor HP Kontak Emergency",
+      "type": "text",
+      "value": null,
+      "required": false,
+      "readOnly": false,
+      "overrideId": true,
+      "placeholder": null,
+      "layout": null
+    },
+    {
+      "fieldType": "FormField",
+      "id": "companyAktaNumber",
+      "name": "No Akta Perubahan Terakhir Lembaga",
+      "type": "text",
+      "value": null,
+      "required": false,
+      "readOnly": false,
+      "overrideId": true,
+      "placeholder": null,
+      "layout": null
+    },
+    {
+      "fieldType": "FormField",
+      "id": "dateAktaPerubahan",
+      "name": "Tanggal Akta Perubahan Terakhir Lembaga",
+      "type": "date",
+      "value": null,
+      "required": false,
+      "readOnly": false,
+      "overrideId": true,
+      "placeholder": null,
+      "layout": null
     }
   ],
   "outcomes": [],
