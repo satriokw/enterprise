@@ -12,18 +12,19 @@ const typeMap = {
   "radio-buttons": "radio",
   dropdown: "select",
   date: "datetime",
-  boolean: "checklist"
+  boolean: "checklist",
+  headline: "text",
 };
 
 const transformedData = {
   id: data.id,
-  type: 'default',
+  type: "default",
   schemaVersion: data.version,
   exporter: {
-    "name": "form-js (https://demo.bpmn.io)",
-    "version": "1.8.3"
+    name: "form-js (https://demo.bpmn.io)",
+    version: "1.8.3",
   },
-  components: []
+  components: [],
 };
 
 async function processFields(fields) {
@@ -33,12 +34,12 @@ async function processFields(fields) {
     const property = {
       label: "",
       type: "",
-      id: id,
-      key: type + '_' + id,
+      id: "",
+      key: "",
       readonly: false,
       layout: {
-        row: '',
-        columns: null
+        row: "",
+        columns: null,
       },
 
       title: "",
@@ -46,33 +47,79 @@ async function processFields(fields) {
     };
 
     if (type in typeMap) {
+      property.id = id;
+      property.key = type + "_" + id;
       property.label = name;
       property.type = typeMap[type];
 
       if (field.type === "date") {
-        property.dateLabel = field.name
-        property.subtype = "date"
+        property.dateLabel = field.name;
+        property.subtype = "date";
       }
 
-      if (field.type === 'boolean') {
-        property.values = [{label:"yes", value: true}]
+      if (field.type === "boolean") {
+        property.values = [{ label: "yes", value: true }];
       }
 
       if (field.hasOwnProperty("value") && field.value !== null) {
         property.defaultValue = field.value;
       }
       if (field.hasOwnProperty("options")) {
-        property.values = field.options.map((item) => ({label: item.name, value: item.id}))
+        property.values = field.options.map((item) => ({
+          label: item.name,
+          value: item.id,
+        }));
       }
-      
+
       if (field.required) {
         property.validate = {
-          "required": true
-        }
+          required: true,
+        };
       }
       transformedData.components.push(property);
+    } else {
+      if (field.fieldType === "ExpressionFormField") {
+        let temp = cleanAndParseJson(JSON.stringify(field.value));
+        property.label = temp.label;
+        property.key = type + "_" + temp.id;
+        property.id = temp.id;
+        property["type"] = "select";
+        try {
+          let fetchDataResult = await fetchData(temp.value);
+          property.values = fetchDataResult.map((item) => ({
+            label: item,
+            value: item,
+          }));
+        } catch (error) {
+          console.error("Error fetching data:", error);
+          property.values = []; // Handle error case appropriately
+        }
+        transformedData.components.push(property);
+      }
     }
   }
+}
+
+async function fetchData(val) {
+  try {
+    let response = await axios.get(val);
+    return response.data.data.map((item) => item.name);
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    return []; // or handle error case as needed
+  }
+}
+
+function cleanAndParseJson(jsonString) {
+  let cleanedJson = jsonString
+    .replace(/\\n/g, "")
+    .replace(/\'\'/g, "")
+    .replace(/@/g, "")
+    .replace(/script=\\"json\\";data=/g, "");
+
+  let parsedJson = JSON.parse(JSON.parse(cleanedJson));
+
+  return parsedJson;
 }
 
 // Assuming `data.fields` is your input array
